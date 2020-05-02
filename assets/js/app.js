@@ -15,7 +15,7 @@ $(function() {
         }
     });
     $('.allDelete').click(function() {
-        $('.lists').remove();
+        $('.lists li').remove();
         $('.none1').removeClass('up1');
         $('.none2').removeClass('up2');
     });
