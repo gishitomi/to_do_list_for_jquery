@@ -36,8 +36,10 @@ allDelete[0].addEventListener('click', function() {
     var li = document.getElementsByTagName('li');
     var lists = document.getElementById('todo');
     for (var i = 0; i < li.length; i++) {
-        lists.removeChild(li[i]);
-    };
+        // lists.removeChild(li[i].firstChild);
+        li[i].textContent = null;
+    }
+
 });
 
 
@@ -47,6 +49,14 @@ function addElement() {
     var text = document.createTextNode(listText.value);
     var li = document.createElement('li');
     li.appendChild(text);
+
+
+    // li要素にボタンを追加
+    // var trash = document.createElement('i');
+    // trash.classList.add('fas fa-trash-alt');
+    // li.appendChild(trash);
+
+
     var lists = document.getElementById('todo')
     lists.appendChild(li);
 };
