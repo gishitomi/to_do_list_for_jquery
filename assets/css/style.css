@@ -30,17 +30,46 @@ header h1 {
     padding: 5px 20px;
     border-radius: 5%;
     cursor: pointer;
-    /* margin-right: 20px; */
+    border-bottom: solid 4px #8d8d8d;
+    border-radius: 3px;
     user-select: none;
+}
+
+.add-btn:active {
+    /*ボタンを押したとき*/
+    -webkit-transform: translateY(4px);
+    transform: translateY(4px);
+    /*下に動く*/
+    border-bottom: none;
+    /*線を消す*/
+}
+
+#todo-app {
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .lists {
     margin: 0 auto;
     margin-top: 40px;
     height: 500px;
-    width: 70%;
+    width: 45%;
     overflow: auto;
     background-color: whitesmoke;
+}
+
+.lists p {
+    font-size: 20px;
+    font-family: serif;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.lists li {
+    font-size: 20px;
+    font-family: serif;
+    /* text-align: center; */
+    margin: 10px;
 }
 
 .btn-square {
