@@ -69,7 +69,8 @@ header h1 {
     font-size: 20px;
     font-family: serif;
     /* text-align: center; */
-    margin: 10px;
+    margin: 40px;
+    position: relative;
 }
 
 .btn-square {
@@ -96,7 +97,7 @@ header h1 {
 }
 
 .delete {
-    margin: 0 auto;
+    width: 50%;
     text-align: center;
 }
 
@@ -115,4 +116,58 @@ header h1 {
 .up1,
 .up2 {
     opacity: 1;
+}
+
+span {
+    font-size: 16px;
+}
+
+
+/* ゴミ箱アイコン */
+
+.fas {
+    color: white;
+}
+
+.trashPosition {
+    position: absolute;
+    right: 20%;
+}
+
+.btn {
+    background-color: red;
+    color: white;
+    padding: 5px 20px;
+    border-radius: 5%;
+    cursor: pointer;
+    border-bottom: solid 4px #e70000;
+    border-radius: 3px;
+    user-select: none;
+}
+
+.btn:active {
+    /*ボタンを押したとき*/
+    -webkit-transform: translateY(4px);
+    transform: translateY(4px);
+    /*下に動く*/
+    border-bottom: none;
+    /*線を消す*/
+}
+
+
+/* チェックボックス */
+
+.far {
+    color: white;
+    font-size: 16px;
+}
+
+.checkPosition {
+    position: absolute;
+    right: 0;
+}
+
+.btnColor {
+    background-color: yellowgreen;
+    border-bottom: solid 4px rgb(142, 190, 46);
 }

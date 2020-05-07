@@ -18,6 +18,7 @@ var e = document.getElementsByClassName('add-btn');
 e[0].addEventListener('click', function() {
     addElement();
     removeButtonElement();
+    trashBox();
 });
 
 
@@ -34,7 +35,7 @@ oneDelete[0].addEventListener('click', function() {
 
 allDelete[0].addEventListener('click', function() {
     var li = document.getElementsByTagName('li');
-    var lists = document.getElementById('todo');
+    // var lists = document.getElementById('todo');
     for (var i = 0; i < li.length; i++) {
         // lists.removeChild(li[i].firstChild);
         li[i].textContent = null;
@@ -52,9 +53,28 @@ function addElement() {
 
 
     // li要素にボタンを追加
-    // var trash = document.createElement('i');
-    // trash.classList.add('fas fa-trash-alt');
-    // li.appendChild(trash);
+    var trash = document.createElement('span');
+    trash.classList.add('trashPosition');
+    trash.classList.add('btn');
+    var trashText = document.createTextNode('削除　');
+    var trashIcon = document.createElement('i');
+    trashIcon.classList.add('fas');
+    trashIcon.classList.add('fa-trash-alt');
+    trash.appendChild(trashText);
+    trash.appendChild(trashIcon);
+    li.appendChild(trash);
+
+    var check = document.createElement('span');
+    check.classList.add('checkPosition');
+    check.classList.add('btn');
+    check.classList.add('btnColor');
+    var checkText = document.createTextNode('完了　');
+    var checkIcon = document.createElement('i');
+    checkIcon.classList.add('far');
+    checkIcon.classList.add('fa-check-square');
+    check.appendChild(checkText);
+    check.appendChild(checkIcon);
+    li.appendChild(check);
 
 
     var lists = document.getElementById('todo')
@@ -71,5 +91,15 @@ function removeButtonElement() {
 
     oneDelete[0].classList.add('up1');
     allDelete[0].classList.add('up2');
+
+};
+
+// todoリスト内の削除ボタン
+function trashBox() {
+    var trash = document.getElementsByClassName('trashPosition');
+    trash[0].addEventListener('click', function() {
+        var li = trash[0].parentNode;
+        li.remove();
+    });
 
 };
