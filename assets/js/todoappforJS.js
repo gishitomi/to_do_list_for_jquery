@@ -19,6 +19,7 @@ e[0].addEventListener('click', function() {
     addElement();
     removeButtonElement();
     trashBox();
+    checkBox();
 });
 
 
@@ -56,24 +57,15 @@ function addElement() {
     var trash = document.createElement('span');
     trash.classList.add('trashPosition');
     trash.classList.add('btn');
-    var trashText = document.createTextNode('削除　');
-    var trashIcon = document.createElement('i');
-    trashIcon.classList.add('fas');
-    trashIcon.classList.add('fa-trash-alt');
-    trash.appendChild(trashText);
-    trash.appendChild(trashIcon);
+    trash.classList.add('trash');
+    trash.innerHTML = '削除　<i class="fas fa-trash-alt"></i>'
     li.appendChild(trash);
 
     var check = document.createElement('span');
     check.classList.add('checkPosition');
     check.classList.add('btn');
-    check.classList.add('btnColor');
-    var checkText = document.createTextNode('完了　');
-    var checkIcon = document.createElement('i');
-    checkIcon.classList.add('far');
-    checkIcon.classList.add('fa-check-square');
-    check.appendChild(checkText);
-    check.appendChild(checkIcon);
+    check.classList.add('check');
+    check.innerHTML = '完了　<i class="far fa-check-square"></i>'
     li.appendChild(check);
 
 
@@ -85,9 +77,6 @@ function addElement() {
 function removeButtonElement() {
     var oneDelete = document.getElementsByClassName('oneDelete');
     var allDelete = document.getElementsByClassName('allDelete');
-    var li = document.getElementsByTagName('li');
-    // 動くか確認
-    // console.log(li.length);
 
     oneDelete[0].classList.add('up1');
     allDelete[0].classList.add('up2');
@@ -96,10 +85,38 @@ function removeButtonElement() {
 
 // todoリスト内の削除ボタン
 function trashBox() {
-    var trash = document.getElementsByClassName('trashPosition');
-    trash[0].addEventListener('click', function() {
-        var li = trash[0].parentNode;
-        li.remove();
-    });
+    var trash = document.getElementsByClassName('trash');
+    // クリックしたliタグの配列数を取得
+    // どちらのfor文でも良い
 
+
+    // for (var i = li.length - 1; i >= 0; i--) {
+    //     li[i].addEventListener('click', function() {
+    //         // thisはli[i]にあたる
+    //         this.remove();
+    //         // console.log(i);
+    //     });
+    // };
+    for (var i = 0; i < trash.length; i++) {
+        trash[i].addEventListener('click', function() {
+            // thisはtrash[i]にあたる
+            var li = this.parentNode;
+            li.remove();
+            // console.log(i);
+        });
+    };
+
+};
+
+function checkBox() {
+    var check = document.getElementsByClassName('check');
+    var done = document.getElementById('done');
+    for (var i = 0; i < check.length; i++) {
+        check[i].addEventListener('click', function() {
+            var li = this.parentNode;
+            // li.remove();
+            done.appendChild(li);
+            li.removeChild('check');
+        });
+    };
 };
