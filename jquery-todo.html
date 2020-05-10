@@ -7,33 +7,27 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>to do app</title>
     <link rel="stylesheet" href="./assets/css/reset.css">
-    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 
 <body>
     <header>
-        <h1>ToDoアプリ</h1>
+        <h1>To do List</h1>
     </header>
     <div class="addli">
         <input id="add-area" type="text" placeholder="To Do">
         <span class="add-btn">add</span>
-    </div>
-    <div id="todo-app">
-        <ul class="lists" id="todo">
-            <p>ToDo</p>
-        </ul>
-        <ul class="lists" id="done">
-            <p>Done</p>
-
-        </ul>
+        <!-- <span class="add-btn">remove</span> -->
     </div>
 
+    <ul class="lists">
+    </ul>
     <div class="delete">
         <span class="btn-square none1 oneDelete">一個消す</span>
         <span class="btn-square none2 allDelete">全部消す</span>
     </div>
-    <script src="./assets/js/todoappforJS.js"></script>
+    <script src="./assets/js/jquery.js"></script>
+    <script src="./assets/js/app.js"></script>
 </body>
 
 </html>

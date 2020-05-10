@@ -17,32 +17,32 @@ var e = document.getElementsByClassName('add-btn');
 
 e[0].addEventListener('click', function() {
     addElement();
-    removeButtonElement();
+    // removeButtonElement();
     trashBox();
     checkBox();
 });
 
 
 // 要素を削除する関数
-var oneDelete = document.getElementsByClassName('oneDelete');
-var allDelete = document.getElementsByClassName('allDelete');
+// var oneDelete = document.getElementsByClassName('oneDelete');
+// var allDelete = document.getElementsByClassName('allDelete');
 
-oneDelete[0].addEventListener('click', function() {
-    var li = document.getElementsByTagName('li');
-    var lists = document.getElementById('todo');
+// oneDelete[0].addEventListener('click', function() {
+//     var li = document.getElementsByTagName('li');
+//     var lists = document.getElementById('todo');
 
-    lists.removeChild(li[li.length - 1]);
-});
+//     lists.removeChild(li[li.length - 1]);
+// });
 
-allDelete[0].addEventListener('click', function() {
-    var li = document.getElementsByTagName('li');
-    // var lists = document.getElementById('todo');
-    for (var i = 0; i < li.length; i++) {
-        // lists.removeChild(li[i].firstChild);
-        li[i].textContent = null;
-    }
+// allDelete[0].addEventListener('click', function() {
+//     var li = document.getElementsByTagName('li');
+//     // var lists = document.getElementById('todo');
+//     for (var i = 0; i < li.length; i++) {
+//         // lists.removeChild(li[i].firstChild);
+//         li[i].textContent = null;
+//     }
 
-});
+// });
 
 
 // 要素をtodoに追加する関数
@@ -74,14 +74,14 @@ function addElement() {
 };
 
 // 要素を削除ボタンを表示する関数
-function removeButtonElement() {
-    var oneDelete = document.getElementsByClassName('oneDelete');
-    var allDelete = document.getElementsByClassName('allDelete');
+// function removeButtonElement() {
+//     var oneDelete = document.getElementsByClassName('oneDelete');
+//     var allDelete = document.getElementsByClassName('allDelete');
 
-    oneDelete[0].classList.add('up1');
-    allDelete[0].classList.add('up2');
+//     oneDelete[0].classList.add('up1');
+//     allDelete[0].classList.add('up2');
 
-};
+// };
 
 // todoリスト内の削除ボタン
 function trashBox() {
@@ -114,9 +114,8 @@ function checkBox() {
     for (var i = 0; i < check.length; i++) {
         check[i].addEventListener('click', function() {
             var li = this.parentNode;
-            // li.remove();
             done.appendChild(li);
-            li.removeChild('check');
+            this.remove();
         });
     };
 };
