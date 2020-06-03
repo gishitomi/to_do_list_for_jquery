@@ -105,7 +105,6 @@ function trashBox() {
             // console.log(i);
         });
     };
-
 };
 
 function checkBox() {

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>to do app</title>
+    <link rel="stylesheet" href="./assets/css/reset.css">
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+    <div id="app">
+        <header>
+            <h1>ToDoアプリ</h1>
+        </header>
+        <div class="addli" v-on:submit.prevent>
+            <input id="add-area" type="text" placeholder="To Do" v-model="newItem">
+            <span class="add-btn" v-on:click="addBtn">add</span>
+        </div>
+        <pre>
+            {{ $data }}
+        </pre>
+        <div id="todo-app">
+            <ul class="lists" id="todo">
+                <p>ToDo</p>
+                <li v-for="todo in todos">
+                    <!-- <input type="checkbox" v-model="todo.isDone"> -->
+                    <span>{{todo.item}}</span>
+                    <span class="btn trash" v-on:click="deleteBtn">削除　<i class="fas fa-trash-alt"></i></span>
+                    <span class="btn check" v-on:click="doneBtn">完了　<i class="far fa-check-square"></i></span>
+                </li>
+            </ul>
+            <ul class="lists" id="done">
+                <p>Done</p>
+
+            </ul>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <script src="./assets/js/vue-todo.js"></script>
+</body>
+
+</html>
