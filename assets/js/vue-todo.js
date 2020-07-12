@@ -3,7 +3,7 @@ var app = new Vue({
     data: {
         newItem: '',
         todos: [],
-        dones: ''
+        dones: '',
     },
     methods: {
         addBtn: function(event) {
